@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quiz App</title>   
+    <link rel="stylesheet" href="quiz.css">
+
+</head>
+<body>
+    <h1 id="test_status">QUIZ <br> <p>Question 0 of 0</p></h1>
+    <div id="test">
+        <div id="question"></div>
+        <div id="optionbar">
+            <label class="options"></label>
+            <label class="options"></label>
+            <label class="options"></label>
+            <label class="options"></label>
+            <button>Submit</button>
+            <button id="clear" onclick="window.localStorage.removeItem('scores');
+            scoreBoard.innerHTML = '';">Clear Scores</button>
+
+        </div>
+        <div id="scoreboard">
+            
+        </div>
+    </div>
+    
+    <script src="quiz.js"></script>
+</body>
+</html>

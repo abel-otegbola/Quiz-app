@@ -1,4 +1,4 @@
-# Quiz App (Qiuziccal poincare)
+# Quiz App (Quizzical poincare)
 ## An HTML,CSS and Javascript quiz application.
 <hr>
 
@@ -10,6 +10,8 @@
 - Abillity to choose difficulty level<br>
 - Store highest scores to local storage.<br>
 - and lots more
+
+visit live site [here](https://quizzical-poincare-0ae9a0.netlify.app)
 
 <hr>
 ## How to use

@@ -1,0 +1,203 @@
+@font-face {
+    font-family: 'Source Sans Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.eot");
+    src: local(""),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.eot?iefix") format("embedded-opentype"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.woff2") format("woff2"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.woff") format("woff"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.ttf") format("truetype"),
+        url("../fonts/source-sans-pro/source-sans-pro-v21-latin-regular.svg#SourceSansPro") format("svg"),
+}
+
+
+body {
+    font-size: 14px;
+    font-family: "Source Sans Pro";
+    margin: 0;
+    padding: 0;
+}
+button {
+    color: #fff;
+}
+
+/* 
+    Header styles
+*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 4%;
+    box-shadow: 0 2px 5px rgba(31, 30, 30, 0.202);
+}
+header h2 {
+    color: rgb(226, 3, 122);
+}
+header .mode {
+    color: rgb(6, 6, 47);
+    position: relative;
+}
+header .mode h4 {
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(226, 3, 122);
+    color: #c0c4d3;
+    cursor: pointer;
+}
+header .mode h4:hover {
+    background-color: rgb(226, 3, 122);
+}
+header #mode__selector {
+    position: absolute;
+    display: none;
+    padding: 10px 0;
+    top: 100%;
+    width: 120px;
+    border-radius: 3px;
+    background-color: #fff;
+    right: 0;
+    box-shadow: 2px 2px 5px rgba(153, 153, 153, 0.301);
+}
+header #mode__selector.active,
+header .mode:hover #mode__selector {
+    display: block;
+}
+header #mode__selector p {
+    cursor: pointer;
+    margin: 0;
+    padding: 10px 15px;
+}
+header #mode__selector p.active,
+header #mode__selector p:hover {
+    background-color: rgb(226, 3, 122);
+    color: #fff;
+}
+
+section {
+    padding: 0;
+    display: flex;
+}
+section h3 {
+    margin: 20px 10px;
+    margin-top: 30px;
+}
+section h4 {
+    margin: 10px;
+}
+section .popular {
+    display: flex;
+    flex-wrap: wrap;
+}
+section .popular span {
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid rgba(5, 5, 118, 0.17);
+    cursor: pointer;
+}
+section .popular span:hover,
+section .popular span.active {
+    background-color: rgb(226, 3, 122);
+    color: #f3f3f3;
+}
+section select {
+    margin: 10px;
+    padding: 10px;
+}
+@media (max-width: 900px) {
+    header {
+        padding: 5px 5%;
+    }
+    section {
+        padding: 5%;
+    }
+}
+
+
+section aside {
+    width: 33%;
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.094);
+}
+section aside:nth-child(2) {
+    width: 47%;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f3f3f3;
+}
+aside .test__status {
+    padding: 10px;
+    border: 1px solid rgba(5, 5, 118, 0.17);
+    background-color: #fff;
+}
+aside .test {
+    padding: 10px;
+}
+aside label {
+    display: flex;
+    align-items: center;
+    background-color: #c0c4d316;
+    padding: 10px;
+    margin: 2px;
+}
+aside label:hover {
+    background-color: rgb(226, 3, 122);
+    color: #fff;
+}
+aside label > input:checked {
+    color: rgb(226, 3, 122);
+}
+aside .buttons {
+    margin-top: 40px;
+}
+aside .test button {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 2px;
+    background-color: rgb(226, 3, 122);
+    cursor: pointer;
+}
+aside .test button:hover {
+    background-color: rgb(150, 3, 81);
+    transition: 0.5s;
+}
+
+
+@keyframes scale {
+    from {
+        width: 30%;
+        height: 30%;
+        opacity: 1;
+    }
+    to {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
+    }
+}
+
+/* 
+    Darkmode
+*/
+.dark {
+    background-color: rgb(27, 30, 41);
+}
+.dark header,
+.dark #mode__selector {
+    background-color: rgb(44, 46, 54);
+    color: rgb(198, 199, 219);
+}
+.dark aside {
+    background-color: rgb(30, 35, 54);
+    color: rgb(198, 199, 219);
+}
+.dark aside:nth-child(2) {
+    background-color: rgb(38, 34, 58);
+    color: #c0c4d3;
+}

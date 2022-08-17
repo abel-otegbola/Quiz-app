@@ -7,7 +7,8 @@ let pos = 0, test, category, difficulty, options, testStatus, button, choices, c
     question = document.querySelector("#question");
     options = document.querySelectorAll("aside #optionbar label");
     button = document.querySelector("#test #optionbar button");
-    scoreBoard = document.querySelector("aside #scoreboard");
+    scoreText = document.querySelectorAll(".score")
+    highscoreBoard = document.querySelector("aside #highscoreboard");
 
 let questionsArray = []
 
@@ -45,7 +46,7 @@ function getDifficulty() {
             allDifficulty[i].classList.add("active")
             difficulty = allDifficulty[i].getAttribute("data-level")
             pos = 0
-            getQuestions(difficulty)
+            getQuestions()
             score = 0;
         })
         if(allDifficulty[i].classList.contains("active")) {
@@ -74,6 +75,7 @@ async function getQuestions(category) {
     .catch(err => {
         questionsArray = [{question: "Couldn't load questions, please check your connection", incorrectAnswers:["option", "option", "option"], correctAnswer:"Answer"}]
         console.log(err)
+        loading.style.display = "none"
         loadQuestion()
     })
 
@@ -102,6 +104,7 @@ function loadQuestion() {
     for(let i=0; i<options.length; i++) {
         options[i].innerHTML = `<input type="radio" name="option" value="${optionsArray[i]}" class="options" id="option${i}" /> ${optionsArray[i]}`
     }
+    document.querySelector("#current").textContent = pos+1;
 }
 
 //After the user submits
@@ -113,6 +116,9 @@ function loadQuestion() {
                 //check if the option checked is equal to the answer
                 if(choices[i].value === correct) {
                     score++;
+                    for(let i=0; i<scoreText.length; i++) {
+                        scoreText[i].textContent = score;
+                    }
                 } else {
                     console.log(choices[i].value, "incorrect")
                 }
@@ -122,9 +128,8 @@ function loadQuestion() {
          
         //go to next question
         pos++;
-        //delays the next question to show the color change to darkgreen or darkred
         if(pos > 9) {
-            window.alert(score)
+            document.querySelector("#scoreboard").style.display = "flex";
         }
         else {
             loadQuestion()
@@ -134,9 +139,18 @@ function loadQuestion() {
      //retrieves the players and scores upon loading of page
      highScores =  JSON.parse(window.localStorage.getItem("scores"))
 
-     scoreBoard.innerHTML = `<p class="highScore">${highScores} </p>`
+     highscoreBoard.innerHTML = `<p class="highScore">${highScores} </p>`
 
     
+function completeTest() {
+    document.querySelector("#scoreboard").style.display = "none";
+    pos = 0
+    getQuestions()
+    score = 0;
+    for(let i=0; i<scoreText.length; i++) {
+        scoreText[i].textContent = score;
+    }
+}
 
 function clearScores() {
     window.localStorage.removeItem('scores');

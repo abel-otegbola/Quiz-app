@@ -29,11 +29,13 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 4%;
+    padding: 0 4%;
     box-shadow: 0 2px 5px rgba(31, 30, 30, 0.202);
 }
 header h2 {
     color: rgb(226, 3, 122);
+    display: flex;
+    align-items: center;
 }
 header .mode {
     color: rgb(6, 6, 47);
@@ -105,12 +107,24 @@ section aside h4 {
 section aside .category,
 section aside .difficulty {
     display: flex;
-    flex-wrap: wrap;
+}
+section aside .qp-slider {
+    position: relative;
+    overflow: hidden;
+    height: 150px;
+} 
+section aside .qp-slider .inner-slider {
+    display: flex;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
 section aside .category span,
 section aside .difficulty span {
-    padding: 10px 20px;
+    padding: 10px;
+    text-align: center;
     margin: 10px;
+    width: 100px;
     border-radius: 5px;
     border: 1px solid rgba(5, 5, 118, 0.17);
     cursor: pointer;
@@ -122,43 +136,18 @@ section aside .difficulty span.active {
     background-color: rgb(226, 3, 122);
     color: #f3f3f3;
 }
-
-/*
-    Loader
-*/
-.loading {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+section aside span i {
+    margin-top: 10px;
 }
-.loading .loader {
-    content: "";
-    position: relative;
-    width: 40px;
-    height: 40px;
-    background-color: transparent;
-    border: 3px solid #f3f3f3;
-    border-top-color: rgb(226, 3, 122);
-    border-radius: 50%;
-    animation: 1s rotate linear infinite;
-}
-@keyframes rotate {
-    from { rotate: 0deg; }
-    to { rotate: 350deg; }
-}
-
 aside .test__status {
     padding: 10px;
     border: 1px solid rgba(5, 5, 118, 0.17);
     background-color: #fff;
 }
 aside .test {
+    padding: 10px;
+}
+aside .test h1 {
     padding: 10px;
 }
 aside label {
@@ -177,19 +166,35 @@ aside label > input:checked {
 }
 aside .buttons {
     margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
 }
-aside .test button {
+button {
     padding: 12px 30px;
     border: none;
     border-radius: 2px;
     background-color: rgb(226, 3, 122);
     cursor: pointer;
 }
-aside .test button:hover {
+button:hover {
     background-color: rgb(150, 3, 81);
     transition: 0.5s;
 }
-
+aside .scoreboard {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.903);
+    width: 90%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5%;
+    transition: 0.6s;
+}
 
 @keyframes scale {
     from {
@@ -222,6 +227,36 @@ aside .test button:hover {
 .dark aside:nth-child(2) {
     background-color: rgb(38, 34, 58);
     color: #c0c4d3;
+}
+
+/*
+    Loader
+*/
+.loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #e4e4e4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loading .loader {
+    content: "";
+    position: relative;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: 3px solid #f3f3f3;
+    border-top-color: rgb(226, 3, 122);
+    border-radius: 50%;
+    animation: 0.6s rotate ease-in infinite;
+}
+@keyframes rotate {
+    from { rotate: 0deg; }
+    to { rotate: 350deg; }
 }
 
 

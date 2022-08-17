@@ -6,13 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keyword" content="quiz app">
     <title>Quizzical poincare</title>   
+    <link rel="stylesheet" href="./assets/vendors/fontawesome/css/all.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 
 <body>
     <header>
-        <h2>Quizzical Poincare</h2>
+        <h2><img src="./assets/imgs/logo.svg" width="40px"/>Quizzical Poincare</h2>
         <div class="mode">
             <h4 onClick="openMode()">Mode</h4>
             <div id="mode__selector">
@@ -27,67 +28,102 @@
         <aside>
             <h3>CHOOSE CATEGORY</h3>
                 <h4>Popular</h4>
-                <div class="category">
-                    <span class="active" data-filter="general_knowledge">General</span>
-                    <span data-filter="science">Science</span>
-                    <span data-filter="arts_and_literature">Arts & Literature</span>
-                    <span data-filter="social_and_leisure">Sport & Leisure</span>
-                    <span data-filter="music">Music</span>
+                <div class="category qp-slider">
+                    <div class="inner-slider">
+                        <span class="active" data-filter="general_knowledge">
+                            <i class="fas fa-brain"></i>
+                            <p>General</p>
+                        </span>
+                        <span data-filter="science">
+                            <i class="fas fa-microscope"></i>
+                            <p>Science</p>
+                        </span>
+                        <span data-filter="arts_and_literature">
+                            <i class="fas fa-palette"></i>
+                            <p>Arts & Literature</p>
+                        </span>
+                        <span data-filter="social_and_leisure">
+                            <i class="fas fa-football"></i>
+                            <p>Sport & Leisure</p>
+                        </span>
+                        <span data-filter="music">
+                            <i class="fas fa-headphones-simple"></i>
+                            <p>Music</p>
+                        </span>
+                        <span data-filter="history">
+                            <i class="fas fa-history"></i>
+                            <p>History</p>
+                        </span>
+                    </div>
                 </div>
                 <h4>Others</h4>
-                <div class="category">
-                    <span data-filter="film_and_tv">Film & Tv</span>
-                    <span data-filter="food_and_drink">Food and Drink</span>
-                    <span data-filter="history">History</span>
-                    <span data-filter="society_and_culture">Society & Culture</span>
-                    <span data-filter="geography">Geography</span>
+                <div class="category qp-slider">
+                    <div class="inner-slider">
+                        <span data-filter="film_and_tv">
+                            <i class="fas fa-tv"></i>
+                            <p>Film & Tv</p>
+                        </span>
+                        <span data-filter="food_and_drink">
+                            <i class="fas fa-burger"></i>
+                            <p>Food and Drink</p>
+                        </span>
+                        <span data-filter="society_and_culture">
+                        <i class="fas fa-users"></i>
+                            <p>Society & Culture</p>
+                        </span>
+                        <span data-filter="geography">
+                        <i class="fas fa-globe"></i>
+                            <p>Geography</p>
+                        </span>
+                    </div>
                 </div>
             <h3>CHOOSE DIFFICULTY</h3>
-            <div class="difficulty">
-                <span class="active" data-level="easy">Easy</span>
-                <span data-level="medium">Medium</span>
-                <span data-level="hard">Hard</span>
+            <div class="difficulty qp-slider">
+                <div class="inner-slider">
+                    <span class="active" data-level="easy">Easy</span>
+                    <span data-level="medium">Medium</span>
+                    <span data-level="hard">Hard</span>
+                </div>
             </div>
         </aside>
 
         <aside>
-            <h3 id="test_status" class="test__status">Question 0 of 0</h3>
+            <h3 id="test_status" class="test__status">Question <span id="current"></span> of 10</h3>
             <div class="test" id="test">
                 <h1 id="question"></h1>
                 <div id="optionbar">
-                    <label for="option0">
-                    </label>
-                        
-                    <label for="option1">
-                    </label>
-                                        
-                    <label for="option2">
-                    </label>
-
-                    <label for="option3">
-                    </label>
+                    <label for="option0"></label>
+                    <label for="option1"></label>
+                    <label for="option2"></label>
+                    <label for="option3"></label>
 
                     <div class="buttons">
                         <button>Submit</button>
-                        <button id="clear" onclick="clearScores();">Clear Scores</button>
+                        <p>Score: <span class="score"></span>/10</p>
                     </div>
-
                 </div>
             </div>
             <div class="loading">
                 <div class="loader"></div>
             </div>
+            <div class="scoreboard" id="scoreboard">
+                <img src="./assets/imgs/cup.jpg" width="50%" />
+                <h2>SCORE: <span class="score"></span> </h2>
+                <button onclick="completeTest()">Complete</button>
+            </div>
         </aside>
 
         <aside>
-            <div id="scoreboard">
-                    
+            <div id="highscoreboard">
+                
             </div>
+            <button id="clear" onclick="clearScores();">Clear Scores</button>
         </aside>
 
     </section>
  
-    <script src="./assets/js/index.js"></script>
     <script src="./assets/js/toggleMode.js"></script>
+    <script src="./assets/js/slider.js"></script>
+    <script src="./assets/js/index.js"></script>
 </body>
 </html>

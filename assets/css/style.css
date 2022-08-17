@@ -248,3 +248,14 @@ aside .test button:hover {
         margin: 10px;
     }
 }
+@media (max-width: 500px) {
+    header {
+        padding: 5px 2%;
+    }
+    section {
+        padding: 5% 2%;
+    }
+    section aside {
+        padding: 10px;
+    }
+}

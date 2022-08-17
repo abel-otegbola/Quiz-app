@@ -1,18 +1,14 @@
 //set variables to communicate with the DOM
 let pos = 0, test, category, difficulty, options, testStatus, button, choices, choice, correct, score = 0;
 
-            //DOM elements to be manipulated
-            testStatus = document.querySelector("#test_status");
-            difficulty = "easy";
-            question = document.querySelector("#question");
-            options = document.querySelectorAll("aside #optionbar label");
-            button = document.querySelector("#test #optionbar button");
-            scoreBoard = document.querySelector("aside #scoreboard");
+    //DOM elements to be manipulated
+    testStatus = document.querySelector("#test_status");
+    difficulty = "easy";
+    question = document.querySelector("#question");
+    options = document.querySelectorAll("aside #optionbar label");
+    button = document.querySelector("#test #optionbar button");
+    scoreBoard = document.querySelector("aside #scoreboard");
 
-
-
-
-//Api address
 let questionsArray = []
 
 
@@ -37,6 +33,28 @@ function getCategory() {
     }
 }
 getCategory()
+
+//Get difficulty selected by the user
+function getDifficulty() {
+    let allDifficulty = document.querySelectorAll(".difficulty span");
+    for(let i=0; i<allDifficulty.length; i++) {
+        allDifficulty[i].addEventListener("click", () => {
+            for(let j=0; j<allDifficulty.length; j++) {
+                allDifficulty[j].classList.remove("active")
+            }
+            allDifficulty[i].classList.add("active")
+            difficulty = allDifficulty[i].getAttribute("data-level")
+            pos = 0
+            getQuestions(difficulty)
+            score = 0;
+        })
+        if(allDifficulty[i].classList.contains("active")) {
+            difficulty = allDifficulty[i].getAttribute("data-level")
+            getQuestions()
+        }
+    }
+}
+getDifficulty()
 
 //Get array containing questions,options and answer from the api
 async function getQuestions(category) {

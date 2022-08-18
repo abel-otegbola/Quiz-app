@@ -49,7 +49,6 @@ getFilter("difficulty", ".difficulty span", "data-level")
 
 //Get array containing questions,options and answer from the api
 async function getQuestions() {
-    console.log(category, difficulty)
     let apiAddress = `https://the-trivia-api.com/api/questions?categories=${category}&limit=10&difficulty=${difficulty}`;
 
     let loading = document.querySelector(".loading");

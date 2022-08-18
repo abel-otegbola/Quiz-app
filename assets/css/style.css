@@ -196,6 +196,9 @@ button:hover {
     background-color: rgb(150, 3, 81);
     transition: 0.5s;
 }
+aside:nth-child(3) button {
+    margin-top: 30px;
+}
 aside .scoreboard {
     position: absolute;
     top: 0;
@@ -329,7 +332,8 @@ thead {
 .dark .scoreboard {
     background-color: rgb(37, 41, 55);
 }
-.dark input {
+.dark input,
+.dark input::placeholder {
     color: #e4e4e4;
 }
 

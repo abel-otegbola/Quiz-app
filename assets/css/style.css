@@ -127,6 +127,7 @@ section aside .qp-slider .inner-slider {
     position: absolute;
     left: 0;
     top: 0;
+    transition: 0.5s;
 }
 section aside .category span,
 section aside .difficulty span {
@@ -138,6 +139,7 @@ section aside .difficulty span {
     background-color: #c0c4d325;
     border: 1px solid rgba(91, 91, 91, 0.126);
     cursor: pointer;
+    transition: 0.3s;
 }
 section aside .category span:hover,
 section aside .category span.active,
@@ -158,6 +160,7 @@ aside .test__status {
 }
 aside .test {
     padding: 10px;
+    overflow: hidden;
 }
 aside .test h1 {
     padding: 10px;
@@ -170,6 +173,7 @@ aside label {
     background-color: #c0c4d316;
     padding: 15px 10px;
     margin: 4px 0;
+    transition: 0.3s;
 }
 aside label:hover {
     background-color: rgb(226, 3, 122);
@@ -219,7 +223,6 @@ aside .scoreboard {
     padding: 5%;
     transition: 0.6s;
 }
-
 @keyframes scale {
     from {
         width: 30%;

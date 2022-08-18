@@ -41,17 +41,22 @@ header h2 img {
     margin-right: 10px;
 }
 header .mode {
+    display: flex;
     color: rgb(6, 6, 47);
     position: relative;
 }
 header .mode h4 {
     display: flex;
     align-items: center;
-    padding: 6px 10px;
+    padding: 10px 15px;
+    margin: 5px;
     border-radius: 3px;
-    border: 1px solid rgb(226, 3, 122);
-    color: rgb(226, 3, 122);
+    border: 1px solid #c0c4d316;
+    color: rgb(198, 199, 219);
     cursor: pointer;
+}
+header .mode h4.menu-button {
+    display: none;
 }
 header .mode h4:hover {
     background-color: rgb(226, 3, 122);
@@ -116,8 +121,7 @@ section aside .difficulty {
 section aside .qp-slider {
     position: relative;
     overflow: hidden;
-    height: 115px;
-    background-color: #c0c4d316;
+    height: 145px;
 } 
 section aside .qp-slider.difficulty {
     height: 60px;
@@ -128,6 +132,7 @@ section aside .qp-slider .inner-slider {
     left: 0;
     top: 0;
     transition: 0.5s;
+    background-color: #c0c4d316;
 }
 section aside .category span,
 section aside .difficulty span {
@@ -152,6 +157,31 @@ section aside .difficulty span.active {
 section aside span i {
     margin-top: 10px;
 }
+section aside .slidebuttons button {
+    position: absolute;
+    bottom: 47%;
+    left: 0;
+    box-shadow: 2px 2px 5px rgba(46, 46, 46, 0.124);
+    padding: 10px;
+    margin: 0;
+    border-radius: 0;
+    background-color: rgba(82, 82, 82, 0.352);
+    opacity: 0.1;
+}
+section aside .slidebuttons button:nth-child(2) {
+    left: auto;
+    right: 0;
+}
+section aside .slidebuttons button:hover {
+    background-color: rgb(198, 199, 219);
+    transition: 0.3s;
+    opacity: 1;
+}
+section aside .difficulty .slidebuttons button {
+    bottom: 20%;
+}
+
+
 aside .test__status {
     padding: 10px;
     margin: 10px;
@@ -375,6 +405,9 @@ thead {
     header {
         padding: 5px 2%;
     }
+    header .mode h4.menu-button {
+        display: block;
+    }
     section {
         padding: 0;
     }
@@ -382,7 +415,34 @@ thead {
         padding: 10px;
         margin: 0;
     }
+    section aside#sidemenu {
+        position: fixed;
+        top: 80px;
+        right: 0;
+        left: 0;
+        transition: 1s;
+        z-index: 1;
+        padding: 5%;
+        width: 90%;
+        height: 0;
+        opacity: 0;
+        animation: 0.7s openSide linear;
+        overflow-y: hidden;
+    }
+    section aside#sidemenu.active {
+        height: 100%;
+        opacity: 1;
+    }
     section aside:nth-child(2) {
         padding: 10px 0;
+    }
+}
+
+@keyframes openSide {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
     }
 }

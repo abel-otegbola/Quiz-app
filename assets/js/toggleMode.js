@@ -2,6 +2,7 @@ function openMode() {
     document.querySelector("#mode__selector").classList.toggle("active")
 }
 
+
 let body = document.querySelector("body")
 let activeMode = document.querySelectorAll("#mode__selector p")
 

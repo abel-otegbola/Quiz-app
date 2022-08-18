@@ -8,12 +8,12 @@
 <hr>
 
 ## Screenshots
-<p align="center">
-    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz1.JPG?raw=true" width="33%" />
-    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz2.JPG?raw=true" width="33%" />
-    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz3.JPG?raw=true" width="33%" />
-    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz4.JPG?raw=true" width="33%" />
-    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz5.JPG?raw=true" width="33%" />
+<p>
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz2.JPG?raw=true" width="30%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz4.JPG?raw=true" width="30%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz5.JPG?raw=true" width="30%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz1.JPG?raw=true" width="30%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz3.JPG?raw=true" width="30%" />
 </p>
 
 ## Features

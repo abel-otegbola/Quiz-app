@@ -55,9 +55,6 @@ header .mode h4 {
     color: rgb(198, 199, 219);
     cursor: pointer;
 }
-header .mode h4.menu-button {
-    display: none;
-}
 header .mode h4:hover {
     background-color: rgb(226, 3, 122);
     color: #fff;

@@ -1,6 +1,20 @@
-# Quiz App (Quizzical poincare)
+
+<img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/logo.svg?raw=true" width="40px" />
+
+## Quiz App (Quizzical poincare)
+
+
 ## An HTML,CSS and Javascript quiz application.
 <hr>
+
+## Screenshots
+<p align="center">
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz1.JPG?raw=true" width="33%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz2.JPG?raw=true" width="33%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz3.JPG?raw=true" width="33%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz4.JPG?raw=true" width="33%" />
+    <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/screenshots/quiz5.JPG?raw=true" width="33%" />
+</p>
 
 ## Features
 - Clean user interface<br>

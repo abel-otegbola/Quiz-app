@@ -206,6 +206,10 @@ button:hover {
     background-color: rgb(150, 3, 81);
     transition: 0.5s;
 }
+aside:nth-child(3) {
+    background-color: rgb(37, 41, 55);
+    color: rgb(198, 199, 219);
+}
 aside:nth-child(3) button {
     margin-top: 30px;
 }
@@ -377,5 +381,8 @@ thead {
     section aside {
         padding: 10px;
         margin: 0;
+    }
+    section aside:nth-child(2) {
+        padding: 10px 0;
     }
 }

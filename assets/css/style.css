@@ -415,34 +415,5 @@ thead {
         padding: 10px;
         margin: 0;
     }
-    section aside#sidemenu {
-        position: fixed;
-        top: 80px;
-        right: 0;
-        left: 0;
-        transition: 1s;
-        z-index: 1;
-        padding: 5%;
-        width: 90%;
-        height: 0;
-        opacity: 0;
-        animation: 0.7s openSide linear;
-        overflow-y: hidden;
-    }
-    section aside#sidemenu.active {
-        height: 100%;
-        opacity: 1;
-    }
-    section aside:nth-child(2) {
-        padding: 10px 0;
-    }
 }
 
-@keyframes openSide {
-    from {
-        height: 0;
-    }
-    to {
-        height: 100%;
-    }
-}

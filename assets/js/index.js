@@ -105,15 +105,24 @@ button.onclick = function() {
         if(choices[i].checked) {
             //check if the option checked is equal to the answer
             if(choices[i].value === correct) {
+                choices[i].parentElement.classList.add("correct");
                 score++;
                 for(let i=0; i<scoreText.length; i++) {
                     scoreText[i].textContent = score;
                 }
             } else {
-                console.log(choices[i].value, "incorrect")
+                choices[i].parentElement.classList.add("wrong");
             }
         }
+        if(choices[i].value === correct) {
+            choices[i].parentElement.classList.add("correct");
+        }
+        setTimeout(() => {
+            choices[i].parentElement.classList.remove("correct");
+            choices[i].parentElement.classList.remove("wrong");
+        }, 2000)
     } 
+    
     pos++;
 
     //If user completes the quiz
@@ -122,7 +131,9 @@ button.onclick = function() {
     }
     else {
     //go to next question
-        loadQuestion()
+        setTimeout(() => {
+            loadQuestion()
+        },2000)
     } 
 
 }

@@ -175,6 +175,12 @@ aside label:hover {
     background-color: rgb(226, 3, 122);
     color: #fff;
 }
+aside label.correct {
+    background-color: rgba(0, 249, 0, 0.385);
+}
+aside label.wrong {
+    background-color: rgba(255, 0, 0, 0.594);
+}
 aside label input {
     margin-right: 10px;
 }

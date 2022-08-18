@@ -3,6 +3,7 @@ let pos = 0, test, category, difficulty, options, testStatus, button, choices, c
 
     //DOM elements to be manipulated
     testStatus = document.querySelector("#test_status");
+    category = "general";
     difficulty = "easy";
     question = document.querySelector("#question");
     options = document.querySelectorAll("aside #optionbar label");
@@ -11,6 +12,7 @@ let pos = 0, test, category, difficulty, options, testStatus, button, choices, c
     highscoreBoard = document.querySelector("aside #highscoreboard");
 
 let questionsArray = []
+let player = "Unknown";
 
 
 //Get category selected by the user
@@ -27,10 +29,6 @@ function getCategory() {
             getQuestions(category)
             score = 0;
         })
-        if(allCategories[i].classList.contains("active")) {
-            category = allCategories[i].getAttribute("data-filter")
-            getQuestions()
-        }
     }
 }
 getCategory()
@@ -49,10 +47,6 @@ function getDifficulty() {
             getQuestions()
             score = 0;
         })
-        if(allDifficulty[i].classList.contains("active")) {
-            difficulty = allDifficulty[i].getAttribute("data-level")
-            getQuestions()
-        }
     }
 }
 getDifficulty()
@@ -73,11 +67,13 @@ async function getQuestions(category) {
         loadQuestion()
     })
     .catch(err => {
+        // Display error to the ui
         questionsArray = [{question: "Couldn't load questions, please check your connection", incorrectAnswers:["option", "option", "option"], correctAnswer:"Answer"}]
         console.log(err)
         loading.style.display = "none"
         loadQuestion()
     })
+
 
 }
 
@@ -139,9 +135,8 @@ function loadQuestion() {
      //retrieves the players and scores upon loading of page
      highScores =  JSON.parse(window.localStorage.getItem("scores"))
 
-     highscoreBoard.innerHTML = `<p class="highScore">${highScores} </p>`
 
-    
+// Complete the test and close scoreboard, setting other variables to their initial
 function completeTest() {
     document.querySelector("#scoreboard").style.display = "none";
     pos = 0
@@ -150,9 +145,28 @@ function completeTest() {
     for(let i=0; i<scoreText.length; i++) {
         scoreText[i].textContent = score;
     }
+    // Show splash screen again
+    document.querySelector("#splash").classList.remove("closed");
+    document.querySelector("#splash").style.display = "block";
 }
 
+// Clear the scores from the local storage
 function clearScores() {
     window.localStorage.removeItem('scores');
     scoreBoard.innerHTML = '';
+}
+
+// Get the player name from the splash screen input
+let userinput = document.getElementById("playerInput");
+userinput.addEventListener("change",(e) => {
+    player = `${e.target.value}`
+}) 
+
+// Close the splash screen
+function closeSplash() {
+    document.querySelector("#splash").classList.add("closed");
+    setTimeout(() => {
+        document.querySelector("#splash").style.display = "none";
+    }, 1000)
+    document.getElementById("player").textContent = player;
 }

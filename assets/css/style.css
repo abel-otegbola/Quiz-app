@@ -37,6 +37,9 @@ header h2 {
     display: flex;
     align-items: center;
 }
+header h2 img {
+    margin-right: 10px;
+}
 header .mode {
     color: rgb(6, 6, 47);
     position: relative;
@@ -63,7 +66,7 @@ header #mode__selector {
     border-radius: 3px;
     background-color: #fff;
     right: 0;
-    box-shadow: 2px 2px 5px rgba(28, 28, 28, 0.149);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.149);
 }
 header #mode__selector.active {
     display: block;
@@ -84,8 +87,10 @@ section {
     display: flex;
 }
 section h3 {
-    margin: 20px 10px;
+    margin: 0;
     margin-top: 30px;
+    padding: 10px;
+    background-color: #15151516;
 }
 section aside {
     width: 33%;
@@ -111,8 +116,12 @@ section aside .difficulty {
 section aside .qp-slider {
     position: relative;
     overflow: hidden;
-    height: 150px;
+    height: 115px;
+    background-color: #c0c4d316;
 } 
+section aside .qp-slider.difficulty {
+    height: 60px;
+}
 section aside .qp-slider .inner-slider {
     display: flex;
     position: absolute;
@@ -126,7 +135,8 @@ section aside .difficulty span {
     margin: 10px;
     width: 100px;
     border-radius: 5px;
-    border: 1px solid rgba(5, 5, 118, 0.17);
+    background-color: #c0c4d325;
+    border: 1px solid rgba(91, 91, 91, 0.126);
     cursor: pointer;
 }
 section aside .category span:hover,
@@ -135,12 +145,14 @@ section aside .difficulty span:hover,
 section aside .difficulty span.active {
     background-color: rgb(226, 3, 122);
     color: #f3f3f3;
+    transition: 0.3s;
 }
 section aside span i {
     margin-top: 10px;
 }
 aside .test__status {
     padding: 10px;
+    margin: 10px;
     border: 1px solid rgba(5, 5, 118, 0.17);
     background-color: #fff;
 }
@@ -149,25 +161,28 @@ aside .test {
 }
 aside .test h1 {
     padding: 10px;
+    background-color: #c0c4d316;
+    line-height: 26px;
 }
 aside label {
     display: flex;
     align-items: center;
     background-color: #c0c4d316;
-    padding: 10px;
-    margin: 2px;
+    padding: 15px 10px;
+    margin: 4px 0;
 }
 aside label:hover {
     background-color: rgb(226, 3, 122);
     color: #fff;
 }
-aside label > input:checked {
-    color: rgb(226, 3, 122);
+aside label input {
+    margin-right: 10px;
 }
 aside .buttons {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
 }
 button {
@@ -208,25 +223,16 @@ aside .scoreboard {
         opacity: 0;
     }
 }
-
-/* 
-    Darkmode
-*/
-.dark {
-    background-color: rgb(27, 30, 41);
+thead,tbody, th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #c0c4d316;
 }
-.dark header,
-.dark #mode__selector {
-    background-color: rgb(44, 46, 54);
-    color: rgb(198, 199, 219);
+table {
+    width: 100%;
 }
-.dark aside {
-    background-color: rgb(30, 35, 54);
-    color: rgb(198, 199, 219);
-}
-.dark aside:nth-child(2) {
-    background-color: rgb(38, 34, 58);
-    color: #c0c4d3;
+thead {
+    background-color: #c0c4d316;
 }
 
 /*
@@ -242,6 +248,7 @@ aside .scoreboard {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 100;
 }
 .loading .loader {
     content: "";
@@ -260,7 +267,71 @@ aside .scoreboard {
 }
 
 
+/*
+    Splash screens
+*/
+.splash {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.splash.closed {
+    opacity: 0;
+    animation: 1s close linear;
+}
+@keyframes close {
+    from { opacity: 1; }
+    to {
+        opacity: 0;
+    }
+}
+.splash .splash__screen {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff url("../imgs/screen.png");
+}
+.splash .splash__screen input {
+    margin: 30px 0 10px 0;
+    padding: 12px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #c0c4d316;
+    text-align: center;
+}
 
+
+/* 
+    Darkmode
+*/
+.dark {
+    background-color: rgb(37, 41, 55);
+}
+.dark header,
+.dark #mode__selector,
+.dark aside,
+.dark aside:nth-child(2) {
+    background-color: rgb(42, 46, 59);
+    color: rgb(198, 199, 219);
+}
+.dark aside .test__status {
+    background-color: #c0c4d316;
+    color: rgb(198, 199, 219);
+}
+.dark .loading,
+.dark .splash .splash__screen,
+.dark .scoreboard {
+    background-color: rgb(37, 41, 55);
+}
+.dark input {
+    color: #e4e4e4;
+}
 
 
 /*

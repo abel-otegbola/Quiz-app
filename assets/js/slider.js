@@ -4,23 +4,15 @@ let pressed = false;
 let startX;
 let x;
 
-console.log(qpSlider, innerSlider)
 
 for(let i=0; i<qpSlider.length; i++) {
     qpSlider[i].addEventListener("mousedown", (e) => {
         pressed = true;
         startX = e.offsetX - innerSlider[i].offsetLeft;
-        qpSlider[i].getElementsByClassName.cursor = "grabbing"
-    })
-    qpSlider[i].addEventListener("mouseenter", (e) => {
-        qpSlider[i].getElementsByClassName.cursor = "grabbing"
     })
     window.addEventListener("mouseup", (e) => {
-        qpSlider[i].getElementsByClassName.cursor = "grab";
         pressed = false;
     })
-
-    
     qpSlider[i].addEventListener("mousemove", (e) => {
         if(!pressed) {
             return false
@@ -33,6 +25,29 @@ for(let i=0; i<qpSlider.length; i++) {
             innerSlider[i].style.left = `${x - startX}px`
             checkBoundary();
         }
+    })
+
+
+    // Slide event for mobile phones 
+    qpSlider[i].addEventListener("touchstart", (e) => {
+        pressed = true;
+        startX = e.touches[0].screenX - innerSlider[i].offsetLeft;
+    })
+    qpSlider[i].addEventListener("touchmove", (e) => {
+        if(!pressed) {
+            return false
+        }
+        else {
+            e.preventDefault();
+
+            let x = e.touches[0].screenX
+
+            innerSlider[i].style.left = `${x - startX}px`
+            checkBoundary();
+        }
+    })
+    window.addEventListener("touchend", (e) => {
+        pressed = false;
     })
 
     const checkBoundary = () => {

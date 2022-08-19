@@ -173,7 +173,7 @@ function addScores() {
 
 // Get the scores from local storage
 function getScores() {
-    let scoresArray = JSON.parse(localStorage.getItem("scores"));
+    let scoresArray = JSON.parse(localStorage.getItem("scores")) || [];
 
     highscoreBoard.innerHTML = "";
 

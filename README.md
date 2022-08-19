@@ -1,10 +1,10 @@
 
-<img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/logo.svg?raw=true" width="40px" />
+<img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/logo.svg?raw=true" width="30%" />
 
 ## Quiz App (Quizzical poincare)
 
 
-## An HTML,CSS and Javascript quiz application.
+### An HTML,CSS and Javascript quiz application.
 <hr>
 
 ## Screenshots
@@ -28,7 +28,7 @@
 visit live site [here](https://quizzical-poincare-0ae9a0.netlify.app)
 
 <hr>
-## How to use
+### How to use
 
 ### Download
 Download the zip file and unzip into your computer.

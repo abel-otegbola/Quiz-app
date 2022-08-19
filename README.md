@@ -28,7 +28,8 @@
 visit live site [here](https://quizzical-poincare-0ae9a0.netlify.app)
 
 <hr>
-### How to use
+
+## How to use
 
 ### Download
 Download the zip file and unzip into your computer.

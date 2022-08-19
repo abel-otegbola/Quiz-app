@@ -1,10 +1,10 @@
-
+<p align="center">
 <img src="https://github.com/abel-otegbola/Quiz-app/blob/master/assets/imgs/logo.svg?raw=true" width="30%" />
+</p>
 
 ## Quiz App (Quizzical poincare)
 
-
-### An HTML,CSS and Javascript quiz application.
+ An HTML,CSS and Javascript quiz application.
 <hr>
 
 ## Screenshots

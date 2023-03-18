@@ -127,7 +127,9 @@ button.onclick = function() {
 
     //If user completes the quiz
     if(pos > 9) {
-        document.querySelector("#scoreboard").style.display = "flex";
+        setTimeout(() => {
+            document.querySelector("#scoreboard").style.display = "flex";
+        }, 2000)
     }
     else {
     //go to next question

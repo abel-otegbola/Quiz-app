@@ -17,6 +17,7 @@ body {
     font-family: "Source Sans Pro";
     margin: 0;
     padding: 0;
+    color: #696969;
 }
 button {
     color: #fff;
@@ -27,23 +28,39 @@ button {
 */
 header {
     display: flex;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
     justify-content: space-between;
     align-items: center;
-    padding: 0 4%;
-    box-shadow: 0 2px 5px rgba(31, 30, 30, 0.202);
+    z-index: 3;
+    background-color: #fff;
+    box-shadow: 0 3px 7px #00000031;
 }
 header h2 {
-    color: rgb(226, 3, 122);
+    color: rgb(88, 63, 255);
     display: flex;
+    margin-left: 15%;
     align-items: center;
 }
 header h2 img {
     margin-right: 10px;
 }
+header h2 p {
+    padding: 0;
+    margin: 0;
+}
+header #toggleMenu {
+    display: none;
+}
 header .mode {
     display: flex;
-    color: rgb(6, 6, 47);
-    position: relative;
+    z-index: 4;
+    margin-right: 15%;
+}
+header .mode h4 i {
+    color: gold;
 }
 header .mode h4 {
     display: flex;
@@ -52,11 +69,11 @@ header .mode h4 {
     margin: 5px;
     border-radius: 3px;
     border: 1px solid #c0c4d316;
-    color: rgb(198, 199, 219);
+    color: rgb(0, 0, 0);
     cursor: pointer;
 }
 header .mode h4:hover {
-    background-color: rgb(226, 3, 122);
+    background-color: rgb(88, 63, 255);
     color: #fff;
 }
 header #mode__selector {
@@ -67,7 +84,7 @@ header #mode__selector {
     width: 120px;
     border-radius: 3px;
     background-color: #fff;
-    right: 0;
+    right: 20%;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.149);
 }
 header #mode__selector.active {
@@ -80,105 +97,72 @@ header #mode__selector p {
 }
 header #mode__selector p.active,
 header #mode__selector p:hover {
-    background-color: rgb(226, 3, 122);
+    background-color: rgb(88, 63, 255);
     color: #fff;
 }
 
 section {
-    padding: 0;
     display: flex;
+    margin-top: 80px;
+    padding: 0 15%;
+    background-color:rgba(31, 30, 30, 0.111)
 }
 section h3 {
+    display: flex;
+    align-items: center;
     margin: 0;
-    margin-top: 30px;
-    padding: 10px;
-    background-color: #15151516;
+    padding: 10px 0;
+    border-radius: 5px 5px 0 0;
+}
+section h3 i {
+    padding: 5px;
+    background: #b3bbc82c;
+    margin-right: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    color: orange;
 }
 section aside {
-    width: 33%;
-    padding: 10px 30px;
+    padding: 30px 20px;
     margin: 10px;
-    background-color: #fff;
+    min-width: 30%;
+    background-color: rgb(237, 238, 242);
     border: 1px solid rgba(0, 0, 0, 0.094);
 }
 section aside:nth-child(2) {
-    width: 47%;
     padding: 10px;
-    margin: 10px 0;
+    margin: 10px;
     background-color: #f3f3f3;
+    color: rgb(37, 41, 55);
     position: relative;
+    flex: 1;
 }
 section aside h4 {
     margin: 10px;
 }
-section aside .category,
-section aside .difficulty {
-    display: flex;
-}
-section aside .qp-slider {
-    position: relative;
-    overflow: hidden;
-    height: 145px;
-} 
-section aside .qp-slider.difficulty {
-    height: 60px;
-}
-section aside .qp-slider .inner-slider {
-    display: flex;
-    position: absolute;
-    left: 0;
-    top: 0;
-    transition: 0.5s;
-    background-color: #c0c4d316;
-}
-section aside .category span,
-section aside .difficulty span {
+
+section aside select {
+    width: 100%;
     padding: 10px;
-    text-align: center;
-    margin: 10px;
-    width: 120px;
+    background-color: rgba(0, 0, 0, 0.149);
+    border: 1px solid rgba(0, 0, 0, 0.149);
     border-radius: 5px;
-    background-color: #c0c4d325;
-    border: 1px solid rgba(91, 91, 91, 0.126);
-    cursor: pointer;
-    transition: 0.3s;
 }
-section aside .category span:hover,
-section aside .category span.active,
-section aside .difficulty span:hover,
-section aside .difficulty span.active {
-    background-color: rgb(226, 3, 122);
-    color: #f3f3f3;
-    transition: 0.3s;
-}
-section aside span i {
-    margin-top: 10px;
-}
-section aside .slidebuttons button {
-    position: absolute;
-    bottom: 47%;
-    left: 0;
-    box-shadow: 2px 2px 5px rgba(46, 46, 46, 0.124);
+aside .action {
     padding: 10px;
-    margin: 0;
-    border-radius: 0;
-    background-color: rgba(82, 82, 82, 0.352);
-    opacity: 0.1;
-}
-section aside .slidebuttons button:nth-child(2) {
-    left: auto;
-    right: 0;
-}
-section aside .slidebuttons button:hover {
-    background-color: rgb(198, 199, 219);
-    transition: 0.3s;
-    opacity: 1;
-}
-section aside .difficulty .slidebuttons button {
-    bottom: 20%;
+    margin-bottom: 20px;
+    background-color: #c2c5d04b;
+    border-radius: 5px;
 }
 
-
+aside .scoreheader {
+    display: flex;
+    padding: 10px 20px;
+    background-color: rgb(88, 63, 255);
+    color: #e4e4e4;
+    border-radius: 5px;
+    justify-content: space-between;
+}
 aside .test__status {
     padding: 10px;
     margin: 10px;
@@ -203,7 +187,7 @@ aside label {
     transition: 0.3s;
 }
 aside label:hover {
-    background-color: rgb(226, 3, 122);
+    background-color: rgb(88, 63, 255);
     color: #fff;
 }
 aside label.correct {
@@ -216,17 +200,19 @@ aside label input {
     margin-right: 10px;
 }
 aside .buttons {
-    margin-top: 40px;
+    margin-top: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
+}
+aside .buttons button {
+    width: 50%;
 }
 button {
     padding: 12px 30px;
     border: none;
     border-radius: 2px;
-    background-color: rgb(226, 3, 122);
+    background-color: rgb(88, 63, 255);
     cursor: pointer;
 }
 button:hover {
@@ -254,6 +240,11 @@ aside .scoreboard {
     padding: 5%;
     transition: 0.6s;
 }
+aside #clear {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgb(150, 3, 81);
+}
 @keyframes scale {
     from {
         width: 30%;
@@ -273,9 +264,13 @@ thead,tbody, th, td {
 }
 table {
     width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 thead {
-    background-color: #c0c4d316;
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+    border-radius: 5px 5px 0 0;
 }
 
 /*
@@ -300,7 +295,7 @@ thead {
     height: 40px;
     background-color: transparent;
     border: 3px solid #f3f3f3;
-    border-top-color: rgb(226, 3, 122);
+    border-top-color: rgb(88, 63, 255);
     border-radius: 50%;
     animation: 0.6s rotate ease-in infinite;
 }
@@ -315,11 +310,12 @@ thead {
 */
 .splash {
     display: block;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 2;
 }
 .splash.closed {
     opacity: 0;
@@ -331,6 +327,10 @@ thead {
         opacity: 0;
     }
 }
+.splash h1 {
+    font-size: 25px;
+    color: rgb(88, 63, 255);
+}
 .splash .splash__screen {
     width: 100%;
     height: 100%;
@@ -339,13 +339,17 @@ thead {
     justify-content: center;
     align-items: center;
     background: #fff url("../imgs/screen.png");
+    background-size: 100%;
+}
+.splash .splash__screen img {
+    border-radius: 50%;
+    border: 3px solid rgb(88, 63, 255);
 }
 .splash .splash__screen input {
     margin: 30px 0 10px 0;
     padding: 12px;
     background-color: transparent;
-    border: none;
-    border-bottom: 1px solid #c0c4d316;
+    border: 1px solid #c0c4d316;
     text-align: center;
 }
 
@@ -356,24 +360,31 @@ thead {
 .dark {
     background-color: rgb(37, 41, 55);
 }
+.dark .mode h4 {
+    background-color: rgb(88, 63, 255);
+    color: #fff;
+}
 .dark header,
-.dark #mode__selector,
 .dark aside,
 .dark aside:nth-child(2) {
-    background-color: rgb(42, 46, 59);
+    background-color: rgb(34, 37, 50);
     color: rgb(198, 199, 219);
 }
 .dark aside .test__status {
-    background-color: #c0c4d316;
+    background-color: #8b92a916;
     color: rgb(198, 199, 219);
 }
 .dark .loading,
 .dark .splash .splash__screen,
-.dark .scoreboard {
-    background-color: rgb(37, 41, 55);
+.dark .scoreboard,
+.dark section .action,
+.dark #mode__selector,
+.dark section option {
+    background-color: rgb(39, 42, 57);
 }
 .dark input,
-.dark input::placeholder {
+.dark input::placeholder,
+.dark section aside select {
     color: #e4e4e4;
 }
 
@@ -383,8 +394,18 @@ thead {
 */
 
 @media (max-width: 900px) {
-    header {
-        padding: 5px 5%;
+    header h2{
+        margin-left: 20px;
+    }
+    header .mode {
+        margin-right: 20px;
+    }
+    header #toggleMenu {
+        display: block;
+        margin: 5px 20px;
+    }
+    header h2 p {
+        display: none;
     }
     section {
         padding: 5%;
@@ -396,6 +417,29 @@ thead {
     section aside:nth-child(2) {
         width: 100%;
         margin: 10px;
+    }
+    .sidebar {
+        width: 0%;
+        min-width: 0%;
+        position: fixed;
+        top: 70px;
+        right: 0;
+        height: 100%;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        z-index: 1000;
+        transition: 0.5s;
+    }
+    .sidebar .action {
+        margin: 20px;
+    }
+    .sidebar button#clear {
+        margin: 20px;
+        width: 92%;
+    }
+    .sidebar.hide {
+        width: 100%;
     }
 }
 @media (max-width: 500px) {

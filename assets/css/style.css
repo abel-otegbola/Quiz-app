@@ -68,13 +68,10 @@ header .mode h4 {
     padding: 10px 15px;
     margin: 5px;
     border-radius: 3px;
-    border: 1px solid #c0c4d316;
-    color: rgb(0, 0, 0);
-    cursor: pointer;
-}
-header .mode h4:hover {
+    border: 1px solid #97979716;
     background-color: rgb(88, 63, 255);
     color: #fff;
+    cursor: pointer;
 }
 header #mode__selector {
     position: absolute;

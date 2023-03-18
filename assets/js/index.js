@@ -16,20 +16,14 @@ let difficulty = "easy";
 
 
 //Get filters set by the user
-function getFilter(filter, element, filter_data) {
-    let allFilter = document.querySelectorAll(element);
-    for(let i=0; i<allFilter.length; i++) {
-        allFilter[i].addEventListener("click", () => {
-            for(let j=0; j<allFilter.length; j++) {
-                allFilter[j].classList.remove("active")
-            }
-            allFilter[i].classList.add("active");
-
+function getFilter(filter) {
+    let select = document.getElementById(filter);
+        select.addEventListener("change", (e) => {
             if (filter === "category") {
-                category = allFilter[i].getAttribute(filter_data)
+                category = select.value
             }
             else {
-                difficulty = allFilter[i].getAttribute(filter_data)
+                difficulty = select.value
             }
 
             getQuestions()
@@ -39,12 +33,11 @@ function getFilter(filter, element, filter_data) {
                 scoreText[i].textContent = score;
             }
         })
-    }
 }
 // Get the category selected
-getFilter("category", ".category span", "data-filter")
+getFilter("category")
 // Get the difficulty selected
-getFilter("difficulty", ".difficulty span", "data-level")
+getFilter("difficulty")
 
 
 //Get array containing questions,options and answer from the api
